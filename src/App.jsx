@@ -1,12 +1,11 @@
 import { useState } from "react"
-
+import Login from "./login/Login"
 
 
 function App() {
-
-
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState("@gmail.com")
   const [password, SetPassword] = useState("")
+  const [valid,setValid] = useState("")
   console.log("email", email)
   console.log("password", password)
 
@@ -26,7 +25,7 @@ function App() {
 
   return (
     <>
-      <div style={styles}  >
+      <div style={styles}>
         <input
           placeholder="Enter Email"
           type="text"
@@ -36,13 +35,15 @@ function App() {
         <input
           type="password"
           placeholder=" Enter Password"
-          value={password}
+          requirvalue={password}
           onChange={(e) => SetPassword(e.target.value)}
         />
         <button onClick={handleSubmit} className="bg-primary mt-3">Submit</button>
       </div>
+      <Login/>
     </>
   )
+
 }
 
 export default App
